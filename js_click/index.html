@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Add element</title>
+    <style>
+      li {
+        font-size: 20px;
+      }
+
+      .big {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button>Add element to list</button>
+    <ul></ul>
+    <script>
+      const button = document.querySelector("button");
+      const ul = document.querySelector("ul");
+      let number = 1;
+      button.addEventListener("click", () => {
+        const li = document.createElement("li");
+        li.textContent = number;
+        ul.appendChild(li);
+        if (number % 3 == 0) {
+          li.classList.add("big");
+        }
+        number += 2;
+      });
+    </script>
+    <div class="wrapper">
+      <button>Dodaj element do listy</button>
+      <ul></ul>
+    </div>
+    <script>
+      function AddElement(mainElement) {
+        this.mainElement = mainElement;
+        this.button = mainElement.querySelector("button");
+        this.ul = mainElement.querySelector("ul");
+        let number = 1;
+        this.button.addEventListener("click", () => {
+          const li = document.createElement("li");
+          li.textContent = number;
+          this.ul.appendChild(li);
+          if (number % 3 == 0) {
+            li.classList.add("big");
+          }
+          number += 2;
+        });
+      }
+
+      const addelement1 = new AddElement(document.querySelector(".wrapper"));
+    </script>
+  </body>
+</html>
