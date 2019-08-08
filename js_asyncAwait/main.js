@@ -22,3 +22,18 @@ async function getUsers() {
   return data;
 }
 getUsers().then(users => console.log(users));
+
+async function myFunc() {
+  // Await for the promise to resolve
+  await new Promise(resolve => {
+    setTimeout(() => {
+      // Resolve the promise
+      resolve(console.log("hello"));
+    }, 3000);
+  });
+  // Once the promise gets resolved continue on
+  console.log("hi");
+}
+
+// Call the function
+myFunc();
