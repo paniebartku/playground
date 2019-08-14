@@ -1,0 +1,17 @@
+section > p {
+  background: red;
+}
+aside > ul > li {
+  font-weight: bold;
+}
+aside > ul > ul > li {
+  font-size: 2rem;
+}
+
+h1 + p::after {
+  content: " - I am first";
+}
+
+div ~ p {
+  border: 1px solid black;
+}
